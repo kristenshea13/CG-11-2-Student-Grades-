@@ -8,25 +8,24 @@ namespace CG_11_2__Student_Grades_
     {
         static void Main(string[] args)
         {
-
-            //Using the text file studentdata.txt write a program that calculates the average grade for 
-            //each student, and print out the student’s name along with their average grade.Be sure to use a Student class.
-
+            //reads text file  with student info
             string[] students = File.ReadAllLines(@"C:\Users\kstar\source\repos\CG 11-2 (Student Grades)\CG 11-2 (Student Grades)\studentdata.txt");
 
+            //initiate list for all instances of student class
             List<Student> studentData = new List<Student>();
 
+            //loop to add data from text file to list
             foreach (string item in students)
             {
                 studentData.Add(new Student(item));
-
             }
 
-            Console.WriteLine("Student average grades: ");
+            Console.WriteLine("Average scores for each student: ");
+            Console.WriteLine();
 
+            //loop to print out average grades of each student
             foreach (Student student in studentData)
             {
-
                 Console.WriteLine($"{student.StudentNameCap()}: {student.AverageGrade()}");
             }
 
