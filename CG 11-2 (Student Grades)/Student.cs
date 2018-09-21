@@ -14,6 +14,7 @@ namespace CG_11_2__Student_Grades_
         //constructor to sort out data types from text file
         public Student(string studentData)
         {
+            
             string[] studentdataSplit = studentData.Split("; ");
             Scores = new List<int>();
 
@@ -41,10 +42,13 @@ namespace CG_11_2__Student_Grades_
         public decimal AverageGrade()
         {
             int totalScore = 0;
+
             foreach (int score in Scores)
             {
+                //loop through List of scores and add them together
                 totalScore += score;
             }
+            //divide totalScore by number of scores in list to get average
             return totalScore / Scores.Count;
         }
 
